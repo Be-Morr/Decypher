@@ -160,10 +160,9 @@ const MyApp = () => {
         newResults[index] = true;
       }
     }
-    debugger;
     setUserInputs(newInputs);
     setMatchResults(newResults);
-  },[matchResults, userInputs]);
+  },[]);
   //Gets a new random string, generates a cypher, and sets the focus reference at refresh.
   useEffect(() => {
     getRandomString();
@@ -172,6 +171,7 @@ const MyApp = () => {
     setMatchResults([]);
     setUsedNumberTries(0);
     setTimeout(() => revealRandomTiles(selectedString), 100);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   //Restart Button
@@ -220,8 +220,8 @@ const MyApp = () => {
 
 
   //Check if there is an input, makes an array of inputs and checks against phrase. Add Backspace support
-  const handleInputChange = (index, value) => {
-    // debugger;
+  const handleInputChange = (index, value,) => {
+ 
     if (
       value.toUpperCase() !== selectedString[index].toUpperCase() &&
       value !== ""
