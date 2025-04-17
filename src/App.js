@@ -186,7 +186,7 @@ const MyApp = () => {
 
   //Check if there is an input, makes an array of inputs and checks against phrase. Add Backspace support
   const handleInputChange = (index, value,) => {
-    // Check input vs String, if wrong adds a strike. Need to account for Backspace}
+ 
     if (
       value.toUpperCase() !== selectedString[index].toUpperCase() &&
       value.key !== "Backspace"
@@ -209,8 +209,8 @@ const MyApp = () => {
       value.toUpperCase() === selectedString[index].toUpperCase();
     setMatchResults(newResults);
     // Currently broken
-    // if (value && index < selectedString.length - 1) {
-    //   inputRefs.current[index + 1].focus();
+    if (value && index < selectedString.length - 1) {
+      inputRefs.current[index + 1].focus();
     // }
   };
 const onKeyDown = (event, index) => {
